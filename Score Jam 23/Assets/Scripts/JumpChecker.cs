@@ -14,7 +14,7 @@ public class JumpChecker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Jumpable")
+        if(other.tag == "Jumpable" || other.tag == "Goomba")
         {
             canJump = true;
         }
@@ -22,7 +22,7 @@ public class JumpChecker : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Jumpable")
+        if (other.tag == "Jumpable" || other.tag == "Goomba")
         {
             canJump = false;
         }

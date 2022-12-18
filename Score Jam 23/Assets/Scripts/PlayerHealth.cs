@@ -4,9 +4,34 @@ using UnityEngine;
 
 public class PlayerHealth : Health
 {
+    [SerializeField]
+    float invincibleTime = 2.5f;
+
+    bool invincible = false;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy" && !invincible)
+        {
+            DecreaseHealth();
+            Destroy(collision.gameObject);
+            StartCoroutine(InvincibilityTime(invincibleTime));
+        }
+    }
+
+    IEnumerator InvincibilityTime(float time)
+    {
+        // May want to add indicator showing invincibility
+
+        invincible = true;
+        yield return new WaitForSeconds(time);
+        invincible = false;
+    }
+
     public override void Die()
     {
-        // Call Lose
+        FindObjectOfType<GameManager>().GameOver();
+        // Update remaining health graphic
         // Animation
     }
 }

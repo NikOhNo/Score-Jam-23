@@ -19,4 +19,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("successfully started LootLocker session");
         });
     }
+
+    public void GameOver()
+    {
+        // Get and Upload Score
+        // Display lose effects and retry graphic
+
+    }
 }

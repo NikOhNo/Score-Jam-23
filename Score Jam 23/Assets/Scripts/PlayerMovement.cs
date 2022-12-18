@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float fallDelay = 1f;
     [SerializeField] 
-    float jumpHeight = 7.5f;
+    float baseJumpHeight = 7.5f;
+    [SerializeField]
+    float fallJumpMultiplier = 1.5f;
 
     float horizontalInput = 0f;
     float verticalInput = 0f;
@@ -75,12 +77,29 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         bool canJump = GetComponentInChildren<JumpChecker>().GetCanJump();
+        float jumpHeight = baseJumpHeight;
 
         if ((collision.gameObject.tag == "Jumpable") && canJump)
         {
-            myRb.velocity = new Vector2(myRb.velocity.x, jumpHeight);
+            if (Input.GetAxisRaw("Vertical") < 0)
+            {
+                jumpHeight *= fallJumpMultiplier;
+            }
 
-            fallDelayTimeElapsed = 0f;
+            Jump(jumpHeight);
         }
+        else if (collision.collider.gameObject.tag == "Goomba" && canJump)
+        {
+            Destroy(collision.gameObject);
+
+            Jump(jumpHeight);
+        }
+    }
+
+    private void Jump(float height)
+    {
+        myRb.velocity = new Vector2(myRb.velocity.x, height);
+
+        fallDelayTimeElapsed = 0f;
     }
 }

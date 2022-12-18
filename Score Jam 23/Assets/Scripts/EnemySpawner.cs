@@ -68,7 +68,6 @@ public class EnemySpawner : MonoBehaviour
             droidTimeElapsed = 0f;
 
             float randomY = Random.Range(droidMinHeightSpawn, droidMaxHeightSpawn);
-            Debug.Log(randomY);
             Vector3 droidSpawnPoint = new Vector3(spawnPoint.x, randomY, 0f);
 
             SpawnEnemy(droidEnemy, droidSpawnPoint);

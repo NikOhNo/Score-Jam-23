@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Jumpable
+  - Enemy
+  - Goomba
   layers:
   - Default
   - TransparentFX
@@ -42,6 +44,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 75134379
+    locked: 0
+  - name: Platform
+    uniqueID: 3600369561
+    locked: 0
+  - name: Enemy
+    uniqueID: 731598801
+    locked: 0
+  - name: Projectile
+    uniqueID: 1899966795
+    locked: 0
   - name: Player
     uniqueID: 2095393563
+    locked: 0
+  - name: Floor
+    uniqueID: 2044365709
     locked: 0
