@@ -33,13 +33,18 @@ public class Projectile : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Health>().DecreaseHealth();
-            Destroy(this.gameObject);
+            Destroy();
         }
     }
 
     private void MoveProjectile()
     {
         myRb.velocity = new Vector2(projectileSpeed * direction, 0f);
+    }
+
+    private void Destroy()
+    {
+        Destroy(gameObject, 0.01f);
     }
 
     public void SetProjectile(float speed, float dir, float time)

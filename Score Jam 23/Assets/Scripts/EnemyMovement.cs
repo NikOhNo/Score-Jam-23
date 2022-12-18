@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed = -4f;
+    float moveSpeed = -3f;
 
     [SerializeField]
     float jumpHeight = 7.5f;
@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        myRb.velocity = new Vector2(moveSpeed, myRb.velocity.y);
+        myRb.velocity = new Vector2(moveSpeed + MapScroll.instance.GetScrollSpeed(), myRb.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

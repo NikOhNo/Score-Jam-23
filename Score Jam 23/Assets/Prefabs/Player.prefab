@@ -141,7 +141,7 @@ MonoBehaviour:
   projectile: {fileID: 843234590291756571, guid: 7864d88f7f11bfb4fb502985e2fee6e5, type: 3}
   projectileVelocity: 20
   projectileSpawnPoint: {fileID: 925678171413805768}
-  projectileLifeTime: 10
+  projectileLifeTime: 2
   shootDelay: 0.35
   canShoot: 1
 --- !u!114 &5344200377792279126

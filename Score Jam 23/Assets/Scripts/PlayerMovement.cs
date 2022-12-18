@@ -40,6 +40,10 @@ public class PlayerMovement : MonoBehaviour
         {
             facingDirection = -1f;
         }
+        else if (Mathf.Abs(horizontalInput) < Mathf.Epsilon)
+        {
+            myRb.velocity = new Vector2((horizontalInput * moveSpeed) + MapScroll.instance.GetScrollSpeed(), myRb.velocity.y);
+        }
         transform.localScale = new Vector3(originalScale.x * facingDirection, originalScale.y, originalScale.z);
     }
 
