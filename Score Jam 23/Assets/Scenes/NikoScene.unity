@@ -487,6 +487,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 351b6f2dc61c38a4eb0b8630032030ed, type: 3}
+--- !u!1001 &4676742361154063182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286104, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676742360970286111, guid: 0794c0faf61361548995f66c45056454, type: 3}
+      propertyPath: m_Name
+      value: Cam Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0794c0faf61361548995f66c45056454, type: 3}
 --- !u!1001 &5344200377947803348
 PrefabInstance:
   m_ObjectHideFlags: 0

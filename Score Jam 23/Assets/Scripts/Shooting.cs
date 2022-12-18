@@ -26,10 +26,7 @@ public class Shooting : MonoBehaviour
         if (canShoot)
         {
             GameObject newProj = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity);
-            //projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileVelocity * direction, 0f);
-            newProj.GetComponent<Projectile>().SetSpeedAndDirection(projectileVelocity, direction);
-
-            Destroy(newProj, projectileLifeTime);
+            newProj.GetComponent<Projectile>().SetProjectile(projectileVelocity, direction, projectileLifeTime);
 
             StartCoroutine(DelayNextShoot(shootDelay));
         }

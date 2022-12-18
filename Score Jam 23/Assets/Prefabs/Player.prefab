@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6705169816343968676}
   - component: {fileID: 6856048595939057914}
   - component: {fileID: 3647055889815156910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,9 +88,9 @@ GameObject:
   - component: {fileID: 6245140544669931980}
   - component: {fileID: 9125725490863722880}
   - component: {fileID: 8551577467364617764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 925678171413805768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shoot Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
