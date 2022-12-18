@@ -25,9 +25,9 @@ public class ScoreManager : MonoBehaviour
     public void SubmitScore()
     {
         string memberID = "20";
-        int leaderboardID = 9659;
+        string leaderboardKey = "player_leaderboard";
 
-        LootLockerSDKManager.SubmitScore(memberID, currScore, leaderboardID, (response) =>
+        LootLockerSDKManager.SubmitScore(memberID, currScore, leaderboardKey, (response) =>
         {
             if (response.statusCode == 200)
             {

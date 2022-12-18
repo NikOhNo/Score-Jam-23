@@ -6,10 +6,19 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] 
     float moveSpeed = 5f;
+    [SerializeField]
+    float fallSpeed = 3f;
+    [SerializeField]
+    float maxFallSpeed = 12f;
+    [SerializeField]
+    float fallDelay = 1f;
     [SerializeField] 
     float jumpHeight = 7.5f;
 
     float horizontalInput = 0f;
+    float verticalInput = 0f;
+    float fallDelayTimeElapsed = 0f;
+
     Rigidbody2D myRb;
     float facingDirection = 1f;
     Vector3 originalScale;
@@ -25,9 +34,20 @@ public class PlayerMovement : MonoBehaviour
         MoveAndFaceDirection();
     }
 
+    private void FixedUpdate()
+    {
+        fallDelayTimeElapsed += Time.deltaTime;
+        verticalInput = Input.GetAxis("Vertical");
+
+        if(fallDelayTimeElapsed >= fallDelay)
+        {
+            myRb.velocity = new Vector2(myRb.velocity.x, Mathf.Clamp(myRb.velocity.y + (fallSpeed * verticalInput), -maxFallSpeed, Mathf.Infinity));
+        }
+    }
+
     private void MoveAndFaceDirection()
     {
-        horizontalInput = Input.GetAxis("Horizontal"); ;
+        horizontalInput = Input.GetAxis("Horizontal");
 
         myRb.velocity = new Vector2(horizontalInput * moveSpeed, myRb.velocity.y);
 
@@ -59,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
         if ((collision.gameObject.tag == "Jumpable") && canJump)
         {
             myRb.velocity = new Vector2(myRb.velocity.x, jumpHeight);
+
+            fallDelayTimeElapsed = 0f;
         }
     }
 }
