@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     int maxHealth;
 
     [SerializeField]
-    public int currHealth;
+    int currHealth;
 
     void Start()
     {

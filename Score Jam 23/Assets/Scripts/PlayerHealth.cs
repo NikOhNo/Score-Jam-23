@@ -32,7 +32,6 @@ public class PlayerHealth : Health
     public override void Die()
     {
         FindObjectOfType<GameManager>().GameOver();
-        ScreenShaker.instance.ShakeCamera(2f, 5f, 4f);
         // Update remaining health graphic
         // Animation
     }
