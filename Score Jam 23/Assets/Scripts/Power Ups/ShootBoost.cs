@@ -7,6 +7,7 @@ public class ShootBoost : PowerUp
     public override void BeginEffect()
     {
         FindObjectOfType<EffectHandler>().SetShootTime(powerUpDuration);
+        FindObjectOfType<SFXPlayer>().PlayPickUpSFX();
         base.BeginEffect();
     }
 }

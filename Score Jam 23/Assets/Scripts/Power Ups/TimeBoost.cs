@@ -7,6 +7,7 @@ public class TimeBoost : PowerUp
     public override void BeginEffect()
     {
         FindObjectOfType<EffectHandler>().SetSlowTimeLeft(powerUpDuration);
+        FindObjectOfType<SFXPlayer>().PlayTimeSlowSFX();
         base.BeginEffect();
     }
 }

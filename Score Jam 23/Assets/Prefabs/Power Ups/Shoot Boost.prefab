@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpIcon: {fileID: 21300000, guid: f3533d8fc6a4dd348b8c37734bb0d18b, type: 3}
-  powerUpDuration: 4
+  powerUpDuration: 5.5
 --- !u!114 &7218268101326317416
 MonoBehaviour:
   m_ObjectHideFlags: 0

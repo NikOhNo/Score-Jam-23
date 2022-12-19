@@ -7,6 +7,7 @@ public class JumpBoost : PowerUp
     public override void BeginEffect()
     {
         FindObjectOfType<EffectHandler>().SetJumpBoostTime(powerUpDuration);
+        FindObjectOfType<SFXPlayer>().PlayPickUpSFX();
         base.BeginEffect();
     }
 }

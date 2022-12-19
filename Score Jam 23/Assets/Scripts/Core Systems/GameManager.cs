@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     CanvasGroup gameOverCanvas;
 
     [SerializeField]
-    float gameOverFadeInTime = 3f;
+    float gameOverFadeInTime = 1f;
 
     void Start()
     {
@@ -43,9 +43,13 @@ public class GameManager : MonoBehaviour
         gameOverCanvas.interactable = true;
     }
 
-    public void GameOver()
+    public IEnumerator GameOver()
     {
-        ScreenShaker.instance.ShakeCamera(2f, 5f, 3f);
+        Time.timeScale = 0.75f;
+        ScreenShaker.instance.ShakeCamera(2f, 5f, 4f);
+
+        yield return new WaitForSeconds(4f);
+
         StartCoroutine(DisplayMessage(gameOverCanvas, gameOverFadeInTime));
         // Get and Upload Score
         // Display lose effects and retry graphic

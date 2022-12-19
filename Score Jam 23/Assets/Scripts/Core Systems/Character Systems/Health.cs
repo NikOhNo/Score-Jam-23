@@ -25,6 +25,8 @@ public class Health : MonoBehaviour
 
     public void DecreaseHealth()
     {
+        FindObjectOfType<SFXPlayer>().PlayHurtSFX();
+
         currHealth--;
 
         if (currHealth <= 0)
@@ -43,8 +45,11 @@ public class Health : MonoBehaviour
 
     public virtual void Die()
     {
+        FindObjectOfType<SFXPlayer>().PlayExplosionSFX();
+
         Instantiate(deathVFX, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
     }
+    
 }

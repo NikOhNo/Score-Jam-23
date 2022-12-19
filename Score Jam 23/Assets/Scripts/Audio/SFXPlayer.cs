@@ -17,6 +17,9 @@ public class SFXPlayer : MonoBehaviour
     [SerializeField]
     AudioClip explosionSFX;
 
+    [SerializeField]
+    AudioClip timeSlowSFX;
+
     private void Awake()
     {
         instance = this;
@@ -37,5 +40,10 @@ public class SFXPlayer : MonoBehaviour
     public void PlayExplosionSFX()
     {
         myAudioSource.PlayOneShot(explosionSFX);
+    }
+
+    public void PlayTimeSlowSFX()
+    {
+        myAudioSource.PlayOneShot(timeSlowSFX);
     }
 }

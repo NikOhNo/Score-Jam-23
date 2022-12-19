@@ -9,8 +9,6 @@ public class UISelector : MonoBehaviour
     [SerializeField] GameObject[] interactableUI;
 
     int currentlySelectedUI = 0;
-    [SerializeField] float selectorXPosOffset = 0f;
-    [SerializeField] float selectorYPosOffset = 0f;
 
     private void Awake()
     {

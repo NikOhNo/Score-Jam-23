@@ -34,5 +34,13 @@ public class PlayerHealth : Health
         FindObjectOfType<GameManager>().GameOver();
         // Update remaining health graphic
         // Animation
+        GetComponent<Animator>().SetBool("Shoot", false);
+        GetComponent<Animator>().SetBool("Punch", false);
+        GetComponent<Animator>().SetBool("Dead", true);
+    }
+
+    public void DeactivateSelf()
+    {
+        gameObject.SetActive(false);
     }
 }
