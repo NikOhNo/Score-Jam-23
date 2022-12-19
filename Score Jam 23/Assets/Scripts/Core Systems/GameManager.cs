@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameOver()
     {
+        FindObjectOfType<ScoreManager>().FinalizeScore();
+
         Time.timeScale = 0.75f;
 
         yield return new WaitForSeconds(0.05f); // Fixes camera shake bug

@@ -5,21 +5,58 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    int currScore = 0;
+    [SerializeField]
+    float secondScoreValue = 10;
+
+    int finalScore = 0;
+    float currScoreFloat = 0f;
+    int currScoreInt = 0;
+    bool gameOver = false;
+
+    private void Update()
+    {
+        // add score for survive time if game not over
+        if(!gameOver)
+        {
+            currScoreFloat += secondScoreValue * Time.deltaTime;
+            currScoreInt = Mathf.FloorToInt(currScoreFloat);
+
+            // update score display
+            UpdateScoreText(currScoreInt);
+        }
+    }
+
+    private void UpdateScoreText(int amount)
+    {
+        ScoreDisplay[] scoreTexts = FindObjectsOfType<ScoreDisplay>();
+        foreach (ScoreDisplay sT in scoreTexts)
+        {
+            sT.UpdateScore(amount);
+        }
+    }
+
+    public void FinalizeScore()
+    {
+        gameOver = true;
+        finalScore = Mathf.FloorToInt(currScoreFloat);
+        UpdateScoreText(finalScore);
+    }
 
     public void AddScore(int amount)
     {
-        currScore += amount;
+        currScoreFloat += amount;
     }
 
     public void SubtractScore(int amount)
     {
-        currScore -= amount;
+        currScoreFloat -= amount;
     }
 
     public void ResetScore()
     {
-        currScore = 0;
+        currScoreInt = 0;
+        currScoreFloat = 0f;
+        finalScore = 0;
     }
 
     public void SubmitScore()
@@ -27,7 +64,7 @@ public class ScoreManager : MonoBehaviour
         string memberID = "20";
         string leaderboardKey = "player_leaderboard";
 
-        LootLockerSDKManager.SubmitScore(memberID, currScore, leaderboardKey, (response) =>
+        LootLockerSDKManager.SubmitScore(memberID, finalScore, leaderboardKey, (response) =>
         {
             if (response.statusCode == 200)
             {
