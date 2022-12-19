@@ -7,7 +7,8 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     GameObject particleEffect;
 
-    private float projectileSpeed;
+    private float projSpeedX;
+    private float projSpeedY;
     private float direction;
 
     private float lifeTime;
@@ -45,7 +46,7 @@ public class Projectile : MonoBehaviour
 
     private void MoveProjectile()
     {
-        myRb.velocity = new Vector2(projectileSpeed * direction, 0f);
+        myRb.velocity = new Vector2(projSpeedX * direction, projSpeedY);
     }
 
     private void Destroy()
@@ -53,9 +54,10 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, 0.01f);
     }
 
-    public void SetProjectile(float speed, float dir, float time)
+    public void SetProjectile(float speedX, float speedY, float dir, float time)
     {
-        projectileSpeed = speed;
+        projSpeedX = speedX;
+        projSpeedY = speedY;
         direction = dir;
         lifeTime = time;
     }

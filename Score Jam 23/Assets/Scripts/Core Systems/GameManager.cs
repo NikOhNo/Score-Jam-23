@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
         while (timeElapsed < fadeInTime)
         {
             timeElapsed += Time.deltaTime;
-            Debug.Log(timeElapsed);
 
             messageCanvasGroup.alpha = timeElapsed / fadeInTime;
 

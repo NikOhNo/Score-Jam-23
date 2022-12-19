@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     float baseJumpHeight = 7.5f;
     [SerializeField]
     float fallJumpMultiplier = 1.5f;
+    [SerializeField]
+    float jumpBoostMultiplier = 1.25f;
 
     [SerializeField]
     Transform leftEdge;
@@ -89,6 +91,11 @@ public class PlayerMovement : MonoBehaviour
         bool canJump = GetComponentInChildren<JumpChecker>().GetCanJump();
         float jumpHeight = baseJumpHeight;
 
+        if (FindObjectOfType<EffectHandler>().JumpBoostActive())
+        {
+            jumpHeight *= jumpBoostMultiplier;
+        }
+
         if ((collision.gameObject.tag == "Jumpable") && canJump)
         {
             if (Input.GetAxisRaw("Vertical") < 0)
@@ -105,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.collider.gameObject.tag == "Goomba" && canJump)
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Health>().Die();
 
             Jump(jumpHeight);
         }

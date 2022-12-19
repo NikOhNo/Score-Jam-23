@@ -19,17 +19,32 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     float shootDelay;
 
+    [SerializeField]
+    float shootBuffSpread = 3f;
+
     public bool canShoot = true;
 
     public virtual void Shoot(float direction = 1f)
     {
         if (canShoot)
         {
-            GameObject newProj = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity);
-            newProj.GetComponent<Projectile>().SetProjectile(projectileVelocity, direction, projectileLifeTime);
+            MakeProjectile(direction, 0f);
+
+            if (FindObjectOfType<EffectHandler>().ShootBoostActive())
+            {
+                MakeProjectile(direction, shootBuffSpread);
+                MakeProjectile(direction, -shootBuffSpread);
+            }
 
             StartCoroutine(DelayNextShoot(shootDelay));
         }
+    }
+
+    private void MakeProjectile(float direction, float yVelocity)
+    {
+        GameObject newProj = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity);
+        newProj.GetComponent<Projectile>().SetProjectile(projectileVelocity, yVelocity, direction, projectileLifeTime);
+        newProj.transform.localScale = new Vector3(direction * projectile.transform.localScale.x, projectile.transform.localScale.y, projectile.transform.localScale.z);
     }
 
     IEnumerator DelayNextShoot(float time)
