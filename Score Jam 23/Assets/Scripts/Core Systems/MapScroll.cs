@@ -13,6 +13,12 @@ public class MapScroll : MonoBehaviour
     [SerializeField]
     float backgroundScrollSpeed = 0.2f;
 
+    [SerializeField]
+    float foregroundScrollSpeed = 0.2f;
+
+    [SerializeField]
+    SpriteRenderer foreground;
+
     private MeshRenderer myRenderer;
     private float timeElapsed = 0f;
 
@@ -33,6 +39,7 @@ public class MapScroll : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
         material.mainTextureOffset = new Vector2(timeElapsed * backgroundScrollSpeed, 0f);
+        foreground.material.mainTextureOffset = new Vector2(timeElapsed * foregroundScrollSpeed, 0f);
     }
 
     public float GetScrollSpeed()

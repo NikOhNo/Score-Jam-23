@@ -285,6 +285,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 195900716487015573, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195900716487015573, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195900716487015573, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195900716487015573, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195900716487015573, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1338752291808022045, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -333,6 +353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scrolling BG
       objectReference: {fileID: 0}
+    - target: {fileID: 6555127607929268159, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71199e7f3b203054eb64333ead8dd58a, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ddd1bf1b9ba2784b8f26d70f2b13fe3, type: 3}
@@ -474,6 +498,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2299730144714043513, guid: 70a7046481dfbeb49ae5ff3d9e5457eb, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299730144714043513, guid: 70a7046481dfbeb49ae5ff3d9e5457eb, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.0627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299730144714043513, guid: 70a7046481dfbeb49ae5ff3d9e5457eb, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.10980393
+      objectReference: {fileID: 0}
     - target: {fileID: 2299730144714043514, guid: 70a7046481dfbeb49ae5ff3d9e5457eb, type: 3}
       propertyPath: m_Name
       value: Main Camera
