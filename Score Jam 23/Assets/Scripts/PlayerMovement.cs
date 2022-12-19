@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     float baseJumpHeight = 7.5f;
     [SerializeField]
     float fallJumpMultiplier = 1.5f;
+
+    [SerializeField]
+    Transform leftEdge;
+    [SerializeField]
+    Transform rightEdge;
 
     float horizontalInput = 0f;
     float verticalInput = 0f;
@@ -34,6 +40,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MoveAndFaceDirection();
+
+        Vector3 clampedPos = new Vector3(Mathf.Clamp(transform.position.x, leftEdge.position.x, rightEdge.position.x), transform.position.y, transform.position.z);
+
+        transform.position = clampedPos;
     }
 
     private void FixedUpdate()
@@ -84,6 +94,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetAxisRaw("Vertical") < 0)
             {
                 jumpHeight *= fallJumpMultiplier;
+            }
+            
+            if (collision.gameObject.TryGetComponent<BreakablePlatform>(out BreakablePlatform platform))
+            {
+                platform.BreakPlatform();
             }
 
             Jump(jumpHeight);

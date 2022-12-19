@@ -110,7 +110,7 @@ Transform:
   - {fileID: 6705169816343968676}
   - {fileID: 925678171413805768}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6475520528273259318
 MonoBehaviour:
@@ -159,10 +159,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   fallSpeed: 3
-  maxFallSpeed: 12
+  maxFallSpeed: 10.75
   fallDelay: 0.6666667
   baseJumpHeight: 7.5
-  fallJumpMultiplier: 1.5
+  fallJumpMultiplier: 1.3333334
 --- !u!212 &5344200377792279210
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8517487480133667237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8517487480133667235}
+  - component: {fileID: 8517487480133667234}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8517487480133667235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517487480133667237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.86, y: -3.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8517487480133667234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517487480133667237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019558cef1fafb04c9cdb7c084dd670f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomTimeModifier: 1
+  timeBetweenCamSpawns: 6
+  timeBetweenDroidSpawns: 8
+  timeBetweenWatcherSpawns: 14
+  camEnemy: {fileID: 4676742360970286111, guid: 0794c0faf61361548995f66c45056454, type: 3}
+  droidEnemy: {fileID: 6120230769232322192, guid: a5633103f06f6d141ac0d4bf908efb45, type: 3}
+  droidMaxHeightSpawn: 4
+  droidMinHeightSpawn: -1.5
+  watcherEnemy: {fileID: 1576183894841605323, guid: 632b5cd883f10684a8d5e6532dadd8d6, type: 3}

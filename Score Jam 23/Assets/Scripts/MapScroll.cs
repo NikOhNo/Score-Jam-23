@@ -16,7 +16,6 @@ public class MapScroll : MonoBehaviour
     private MeshRenderer myRenderer;
     private float timeElapsed = 0f;
 
-    Vector2 offset;
     Material material;
 
     private void Awake()
@@ -26,7 +25,6 @@ public class MapScroll : MonoBehaviour
 
     private void Start()
     {
-        //myRb = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<MeshRenderer>();
         instance = this;
     }
@@ -34,7 +32,6 @@ public class MapScroll : MonoBehaviour
     private void Update()
     {
         timeElapsed += Time.deltaTime;
-        //myRenderer.material.mainTextureOffset = new Vector2(timeElapsed * backgroundScrollSpeed, 0f);
         material.mainTextureOffset = new Vector2(timeElapsed * backgroundScrollSpeed, 0f);
     }
 
