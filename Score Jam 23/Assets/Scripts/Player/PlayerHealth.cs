@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class PlayerHealth : Health
         if (collision.collider.tag == "Enemy" && !invincible)
         {
             DecreaseHealth();
+            FindObjectOfType<HealthDisplay>().UpdateIcons();
             ScreenShaker.instance.ShakeCamera(1f, 10f, 0.5f);
             Destroy(collision.gameObject);
             StartCoroutine(InvincibilityTime(invincibleTime));

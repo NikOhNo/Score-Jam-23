@@ -52,4 +52,13 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
     }
     
+    public int GetCurrHealth()
+    {
+        return currHealth;
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
 }

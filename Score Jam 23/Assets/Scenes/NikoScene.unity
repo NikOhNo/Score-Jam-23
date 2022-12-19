@@ -869,33 +869,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1851506802, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1851506802, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1851506802, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1279065233}
-    - target: {fileID: 1851506802, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1851506802, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadNextScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 1851506802, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1851506802, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4473966269980411464, guid: 3f96ed5f6c3d11a45b0db4d77188a553, type: 3}
       propertyPath: m_Name
       value: Game Canvas
