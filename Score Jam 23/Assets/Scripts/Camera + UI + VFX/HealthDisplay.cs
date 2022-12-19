@@ -27,7 +27,6 @@ public class HealthDisplay : MonoBehaviour
 
         for (int i = 0; i < (maxHealth - currHealth); i++)
         {
-            Debug.Log(i);
             heartIcons[i].sprite = hurtSprite;
         }
     }

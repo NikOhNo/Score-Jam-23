@@ -18,6 +18,12 @@ public class SceneLoader : MonoBehaviour
     }
     public void ReloadScene()
     {
+        if(FindObjectOfType<ScoreManager>())
+        {
+            FindObjectOfType<ScoreManager>().ResetScore();
+            FindObjectOfType<ScoreManager>().ResetGameOver();
+        }
+
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.buildIndex);
         Time.timeScale = 1f;
@@ -29,6 +35,12 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadSceneName(string sceneName)
     {
+        if (FindObjectOfType<ScoreManager>())
+        {
+            FindObjectOfType<ScoreManager>().ResetScore();
+            FindObjectOfType<ScoreManager>().ResetGameOver();
+        }
+
         SceneManager.LoadScene(sceneName);
         Time.timeScale = 1f;
     }

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField]
+    int scoreValue;
+
+    [SerializeField]
     int maxHealth;
 
     [SerializeField]
@@ -48,6 +51,8 @@ public class Health : MonoBehaviour
         FindObjectOfType<SFXPlayer>().PlayExplosionSFX();
 
         Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+        FindObjectOfType<ScoreManager>().AddScore(scoreValue);
 
         Destroy(gameObject);
     }

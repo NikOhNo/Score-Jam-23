@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3e119418f16754d85bd9519f2f016c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreValue: 33
   maxHealth: 3
   currHealth: 0
   deathVFX: {fileID: 5151200205344103439, guid: f02fb0d6f0e49b64c8f8e1b6ced62ee4, type: 3}
@@ -211,7 +212,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 731598801
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 890519420, guid: baf9aa29824f8bc45a13faf070da8161, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

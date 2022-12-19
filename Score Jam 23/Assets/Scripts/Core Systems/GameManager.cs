@@ -11,21 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float gameOverFadeInTime = 1f;
 
-    void Start()
-    {
-        LootLockerSDKManager.StartGuestSession((response) =>
-        {
-            if (!response.success)
-            {
-                Debug.Log("error starting LootLocker session");
-
-                return;
-            }
-
-            Debug.Log("successfully started LootLocker session");
-        });
-    }
-
     IEnumerator DisplayMessage(CanvasGroup messageCanvasGroup, float fadeInTime)
     {
         float timeElapsed = 0f;

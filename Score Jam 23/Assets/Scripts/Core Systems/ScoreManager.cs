@@ -16,13 +16,17 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         // add score for survive time if game not over
-        if(!gameOver)
+        if (!gameOver)
         {
             currScoreFloat += secondScoreValue * Time.deltaTime;
             currScoreInt = Mathf.FloorToInt(currScoreFloat);
 
             // update score display
             UpdateScoreText(currScoreInt);
+        }
+        else
+        {
+            UpdateScoreText(finalScore);
         }
     }
 
@@ -57,6 +61,10 @@ public class ScoreManager : MonoBehaviour
         currScoreInt = 0;
         currScoreFloat = 0f;
         finalScore = 0;
+    }
+    public void ResetGameOver()
+    {
+        gameOver = false;
     }
 
     public void SubmitScore()
@@ -93,5 +101,10 @@ public class ScoreManager : MonoBehaviour
                 Debug.Log("failed: " + response.Error);
             }
         });
+    }
+
+    public int GetFinalScore()
+    {
+        return finalScore;
     }
 }
