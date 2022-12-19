@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     [SerializeField]
     int currHealth;
 
+    [SerializeField]
+    GameObject deathVFX;
+
     void Start()
     {
         currHealth = maxHealth;
@@ -40,6 +43,8 @@ public class Health : MonoBehaviour
 
     public virtual void Die()
     {
+        Instantiate(deathVFX, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 }

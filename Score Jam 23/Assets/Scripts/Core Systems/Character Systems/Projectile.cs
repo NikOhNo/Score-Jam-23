@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField]
+    GameObject particleEffect;
+
     private float projectileSpeed;
     private float direction;
 
@@ -32,6 +35,8 @@ public class Projectile : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
+            Instantiate(particleEffect, collision.ClosestPoint(transform.position), Quaternion.identity);
+
             collision.gameObject.GetComponent<Health>().DecreaseHealth();
             ScreenShaker.instance.ShakeCamera(1f, 1f, 0.35f);
             Destroy();

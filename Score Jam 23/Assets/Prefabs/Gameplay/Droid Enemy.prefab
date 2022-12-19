@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currHealth: 0
+  deathVFX: {fileID: 5151200205344103439, guid: f02fb0d6f0e49b64c8f8e1b6ced62ee4, type: 3}
 --- !u!114 &6120230769232322194
 MonoBehaviour:
   m_ObjectHideFlags: 0

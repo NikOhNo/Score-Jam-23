@@ -62,3 +62,6 @@ TagManager:
   - name: Floor
     uniqueID: 2044365709
     locked: 0
+  - name: Particle Effect
+    uniqueID: 1624014695
+    locked: 0
