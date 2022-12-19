@@ -41,11 +41,12 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         messageCanvasGroup.alpha = 1f;
+        gameOverCanvas.interactable = true;
     }
 
     public void GameOver()
     {
-        ScreenShaker.instance.ShakeCamera(2f, 5f, 4f);
+        ScreenShaker.instance.ShakeCamera(2f, 5f, 3f);
         StartCoroutine(DisplayMessage(gameOverCanvas, gameOverFadeInTime));
         // Get and Upload Score
         // Display lose effects and retry graphic

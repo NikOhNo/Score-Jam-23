@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NikoScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 70be3ed55d560a640a74f17e4532fa2f
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: 54c4d85916151334c9da50e058b5626a
+  - enabled: 1
+    path: Assets/Scenes/Leaderboard.unity
+    guid: e0d9b14f930eecc48b9dbd8aa4f0688a
   m_configObjects: {}
