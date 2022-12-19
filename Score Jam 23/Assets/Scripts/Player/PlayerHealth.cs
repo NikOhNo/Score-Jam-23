@@ -33,7 +33,7 @@ public class PlayerHealth : Health
 
     public override void Die()
     {
-        FindObjectOfType<GameManager>().GameOver();
+        StartCoroutine(FindObjectOfType<GameManager>().GameOver());
         // Update remaining health graphic
         // Animation
         GetComponent<Animator>().SetBool("Shoot", false);

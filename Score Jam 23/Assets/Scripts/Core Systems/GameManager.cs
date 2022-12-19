@@ -46,11 +46,56 @@ public class GameManager : MonoBehaviour
     public IEnumerator GameOver()
     {
         Time.timeScale = 0.75f;
-        ScreenShaker.instance.ShakeCamera(2f, 5f, 4f);
+
+        yield return new WaitForSeconds(0.05f); // Fixes camera shake bug
+        ScreenShaker.instance.ShakeCamera(2f, 5f, 3f);
+
+
+        FindObjectOfType<PlayerShooting>().enabled = false;
+        FindObjectOfType<PlayerMovement>().enabled = false;
+
+        FindObjectOfType<EnemySpawner>().enabled = false;
+        FindObjectOfType<PlatformSpawner>().enabled = false;
+        FindObjectOfType<PowerUpSpawner>().enabled = false;
+        
+        Rigidbody2D[] allRbs = FindObjectsOfType<Rigidbody2D>();
+        foreach (Rigidbody2D rb in allRbs)
+        {
+            rb.freezeRotation = true;
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.isKinematic = true;
+            rb.Sleep();
+        }
+
+        ScrollMover[] scrollMovers = FindObjectsOfType<ScrollMover>();
+        foreach (ScrollMover sm in scrollMovers)
+        {
+            sm.enabled = false;
+        }
+
+        EnemyMovement[] enemyMovers = FindObjectsOfType<EnemyMovement>();
+        foreach (EnemyMovement em in enemyMovers)
+        {
+            em.enabled = false;
+        }
+
+        EnemyCrawlMovement[] enemyCrawlers = FindObjectsOfType<EnemyCrawlMovement>();
+        foreach (EnemyCrawlMovement ecm in enemyCrawlers)
+        {
+            ecm.enabled = false;
+        }
 
         yield return new WaitForSeconds(4f);
 
         StartCoroutine(DisplayMessage(gameOverCanvas, gameOverFadeInTime));
+
+        Health[] enemies = FindObjectsOfType<Health>();
+        foreach (Health e in enemies)
+        {
+            e.Die();
+        }
+
         // Get and Upload Score
         // Display lose effects and retry graphic
     }
