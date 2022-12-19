@@ -13,6 +13,8 @@ public class PlayerShooting : Shooting
     }
     public override void Shoot(float direction = 1)
     {
+        SFXPlayer.instance.PlayShootSFX();
+
         direction = FindObjectOfType<PlayerMovement>().GetFaceDirection();
         base.Shoot(direction);
 

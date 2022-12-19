@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4057222735213294568
 MonoBehaviour:
@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1f6ae549c22ff48ad9ee71e99040f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSFX: {fileID: 8300000, guid: 906f8999c084e8c48aa7c5c522425387, type: 3}
+  shootSFX: {fileID: 8300000, guid: 5a72ea6373089024b9c32c49508a351d, type: 3}
   pickUpSFX: {fileID: 8300000, guid: d852cafb85a9b1949abc457eb738bbfe, type: 3}
   hurtSFX: {fileID: 8300000, guid: 4c9d47b0c9ddb374a8982c2c942b87ef, type: 3}
   explosionSFX: {fileID: 8300000, guid: b99a52bc273b45e489365e9888f962eb, type: 3}

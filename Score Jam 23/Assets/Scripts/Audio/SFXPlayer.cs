@@ -9,6 +9,12 @@ public class SFXPlayer : MonoBehaviour
     AudioSource myAudioSource;
 
     [SerializeField]
+    AudioClip jumpSFX;
+
+    [SerializeField]
+    AudioClip shootSFX;
+
+    [SerializeField]
     AudioClip pickUpSFX;
 
     [SerializeField]
@@ -25,6 +31,16 @@ public class SFXPlayer : MonoBehaviour
         instance = this;
 
         myAudioSource = GetComponent<AudioSource>();
+    }
+
+    public void PlayJumpSFX()
+    {
+        myAudioSource.PlayOneShot(jumpSFX);
+    }
+
+    public void PlayShootSFX()
+    {
+        myAudioSource.PlayOneShot(shootSFX);
     }
 
     public void PlayPickUpSFX()
