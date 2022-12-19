@@ -113,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(float height)
     {
+        ScreenShaker.instance.ShakeCamera(1f, 1f, 0.25f);
+
         myRb.velocity = new Vector2(myRb.velocity.x, height);
 
         fallDelayTimeElapsed = 0f;

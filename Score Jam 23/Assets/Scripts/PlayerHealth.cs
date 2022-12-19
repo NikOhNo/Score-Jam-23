@@ -14,6 +14,7 @@ public class PlayerHealth : Health
         if (collision.collider.tag == "Enemy" && !invincible)
         {
             DecreaseHealth();
+            ScreenShaker.instance.ShakeCamera(1f, 10f, 0.5f);
             Destroy(collision.gameObject);
             StartCoroutine(InvincibilityTime(invincibleTime));
         }
@@ -31,6 +32,7 @@ public class PlayerHealth : Health
     public override void Die()
     {
         FindObjectOfType<GameManager>().GameOver();
+        ScreenShaker.instance.ShakeCamera(2f, 5f, 4f);
         // Update remaining health graphic
         // Animation
     }

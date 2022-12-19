@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterScrollSpeed: -1
-  backgroundScrollSpeed: 0.2
+  backgroundScrollSpeed: 0.075
 --- !u!212 &1338752291808022044
 SpriteRenderer:
   m_ObjectHideFlags: 0

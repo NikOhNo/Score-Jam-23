@@ -33,6 +33,7 @@ public class Projectile : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Health>().DecreaseHealth();
+            ScreenShaker.instance.ShakeCamera(1f, 1f, 0.35f);
             Destroy();
         }
     }
