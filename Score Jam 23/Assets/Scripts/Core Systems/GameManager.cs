@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameOver()
     {
+        FindObjectOfType<MusicPlayer>().PlayLoseMusic();
         FindObjectOfType<ScoreManager>().FinalizeScore();
 
         Time.timeScale = 0.75f;
